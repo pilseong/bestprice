@@ -10,6 +10,7 @@ import (
 
 	_ "github.com/lib/pq"
 	"github.com/pilseong/bestprice/backend/internal/gmarket"
+	"github.com/pilseong/bestprice/backend/internal/tmon"
 )
 
 const (
@@ -18,6 +19,7 @@ const (
 
 type application struct {
 	GmarketDB gmarket.DatabaseRepo
+	TmonDB    tmon.DatabaseRepo
 }
 
 func setTimezone() {
@@ -53,7 +55,7 @@ var counts int64
 
 func connectToDB() *sql.DB {
 	// dataSourceName := os.Getenv("DSN")
-	dataSourceName := "postgresql://postgres:qwe123@192.168.50.141:5433/bestprice?search_path=gmarket&sslmode=disable&timezone=UTC+9&connect_timeout=5"
+	dataSourceName := "postgresql://postgres:qwe123@192.168.50.141:5433/bestprice?sslmode=disable&timezone=UTC+9&connect_timeout=5"
 
 	log.Println(dataSourceName)
 
@@ -87,6 +89,7 @@ func main() {
 
 	app := application{}
 	app.GmarketDB = &gmarket.PostgresDBRepo{DB: conn}
+	app.TmonDB = &tmon.PostgresDBRepo{DB: conn}
 	defer app.GmarketDB.Connection().Close()
 
 	log.Printf("Starting best price service on port %s\n", webPort)

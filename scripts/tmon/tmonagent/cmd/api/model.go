@@ -44,9 +44,9 @@ func (app *Config) BulkCreate(items []models.Item) (int, error) {
 
 	valueStrings := []string{}
 
-	valueArgs := make([]interface{}, 0, 13)
+	valueArgs := make([]interface{}, 0, 14)
 	for index, item := range items {
-		valueStrings = append(valueStrings, "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
+		valueStrings = append(valueStrings, "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
 		valueArgs = append(valueArgs, batchId)
 		valueArgs = append(valueArgs, index+1)
 		valueArgs = append(valueArgs, item.StartDate)
@@ -56,6 +56,7 @@ func (app *Config) BulkCreate(items []models.Item) (int, error) {
 		valueArgs = append(valueArgs, item.DeliveryInfo.DeliveryFeePolicy)
 		valueArgs = append(valueArgs, item.DeliveryInfo.DeliveryFee)
 		valueArgs = append(valueArgs, item.CategoryInfo.CategoryName)
+		valueArgs = append(valueArgs, item.LaunchInfo.URL)
 		valueArgs = append(valueArgs, item.ImageInfo.Pc3ColImageURL)
 		valueArgs = append(valueArgs, item.DiscountPrice.OriginalPrice)
 		valueArgs = append(valueArgs, item.DiscountPrice.Price)
@@ -72,6 +73,7 @@ func (app *Config) BulkCreate(items []models.Item) (int, error) {
 		"deliveryFeePolicy, "+
 		"deliveryFee, "+
 		"categoryName, "+
+		"url, "+
 		"pc3ColImageUrl, "+
 		"originalPrice, "+
 		"price, "+

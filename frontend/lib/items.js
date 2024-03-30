@@ -2,12 +2,12 @@
 const SERVER_URL = 'http://localhost:5006'
 
 export async function getFeaturedReview() {
-  const reviews = await getItems()
+  const reviews = await getGmarketItems()
   return reviews[0]
 }
 
 export async function getReview(slug) {
-  const { data } = await fetchItems({
+  const { data } = await fetchGmarketItems({
     filters: { slug: { $eq: slug } },
     fields: ['slug', 'title', 'subtitle', 'publishedAt', 'body'],
     populate: { image: { fields: ['url'] } },
@@ -29,14 +29,32 @@ export async function getReview(slug) {
   }
 }
 
-export async function getItems(pageSize) {
-  const response = await fetchItems()
+export async function getGmarketItems(pageSize) {
+  const response = await fetchGmarketItems()
 
   return response
 }
 
-async function fetchItems() {
+export async function getTmonItems(pageSize) {
+  const response = await fetchTmonItems()
+
+  return response
+}
+
+async function fetchGmarketItems() {
   const url = `${SERVER_URL}/gmarket/items`
+
+  const response = await fetch(url)
+
+  if (!response.ok) {
+    throw new Error(`Server returned ${response.status} for ${url}`)
+  }
+
+  return await response.json()
+}
+
+async function fetchTmonItems() {
+  const url = `${SERVER_URL}/tmon/items`
 
   const response = await fetch(url)
 
@@ -49,7 +67,7 @@ async function fetchItems() {
 
 
 export async function getSlugs() {
-  const { data } = await fetchItems({
+  const { data } = await fetchGmarketItems({
     fields: ['slug'],
     pagination: { pageSize: 100 },
     sort: ['publishedAt:desc']

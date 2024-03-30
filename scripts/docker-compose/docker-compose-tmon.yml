@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  gmarketagent:
+  tmontagent:
     build:
       context: ../tmon/tmonagent
       dockerfile: tmonagent.dockerfile

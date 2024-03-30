@@ -22,7 +22,7 @@ function RootLayout({ children, }) {
           {children}
         </main>
         <footer className="text-center text-xs border-t py-4 text-slate-500">
-          Enjoy development and let people feel good {' '}<br />
+          Enjoy development and let people feel good. {' '} <span className="text-sm text-yellow-900">Powered By Go + NextJS Headless</span><br />
           <div className="text-orange-800 font-semibold pt-1">
             Copyright 2024 Pilseong Heo
           </div>

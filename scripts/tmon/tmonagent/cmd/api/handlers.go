@@ -11,10 +11,6 @@ import (
 	"github.com/pilseong/tomonagent/models"
 )
 
-type TmonBEST struct {
-	Data []models.Item `json:"data"`
-}
-
 // func (app *Config) mockData() {
 // 	items := []models.Item{{
 // 		ID:                  0,
@@ -85,7 +81,7 @@ func (app *Config) getData() {
 	}
 
 	// 결과 출력
-	var result TmonBEST
+	var result models.TmonBEST
 	if err := json.Unmarshal(bytes, &result); err != nil { // Parse []byte to the go struct pointer
 		fmt.Println("Can not unmarshal JSON")
 	}

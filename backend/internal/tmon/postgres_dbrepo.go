@@ -1,4 +1,4 @@
-package gmarket
+package tmon
 
 import (
 	"context"
@@ -26,7 +26,7 @@ func (m *PostgresDBRepo) AllItems() ([]*Item, error) {
 		select
 			batchid
 		from
-			gmarket.latest
+		tmon.latest
 		where id = 1
 	`
 
@@ -53,9 +53,10 @@ func (m *PostgresDBRepo) AllItems() ([]*Item, error) {
 
 	query = `
 		select
-			id, rank, goodsCode, goodsname, linkUrl, discountPrice, price, discountRate, deliveryInfo, imageUrl
+			id, rank, title, deliveryFeePolicy, 
+			deliveryFee, categoryName, url, pc3ColImageUrl, originalPrice, price, discountRate
 		from
-			gmarket.items
+			tmon.items
 		where
 		  batchid = $1
 		order by
@@ -77,14 +78,15 @@ func (m *PostgresDBRepo) AllItems() ([]*Item, error) {
 		err := rows.Scan(
 			&item.ID,
 			&item.Rank,
-			&item.GoodsCode,
-			&item.GoodsName,
-			&item.LinkURL,
-			&item.DiscountPrice,
+			&item.Title,
+			&item.DeliveryFeePolicy,
+			&item.DeliveryFee,
+			&item.CategoryName,
+			&item.URL,
+			&item.Pc3ColImageURL,
+			&item.OriginalPrice,
 			&item.Price,
 			&item.DiscountRate,
-			&item.DeliveryInfo,
-			&item.ImageURL,
 		)
 		if err != nil {
 			return nil, err

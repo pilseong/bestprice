@@ -9,9 +9,9 @@ import (
 	_ "github.com/lib/pq"
 )
 
-// const INTERVAL_PERIOD time.Duration = 2 * time.Hour
+const INTERVAL_PERIOD time.Duration = 2 * time.Hour
 
-const INTERVAL_PERIOD time.Duration = 10 * time.Second
+// const INTERVAL_PERIOD time.Duration = 10 * time.Second
 
 var counts int64
 

@@ -21,6 +21,7 @@ func (app *application) routes() http.Handler {
 	// mux.Get("/logout", app.logout)
 
 	mux.Get("/gmarket/items", app.AllGmarketItems)
+	mux.Get("/tmon/items", app.AllTmonItems)
 	// mux.Get("/movies/{id}", app.GetMovie)
 
 	// mux.Get("/genres", app.AllGenres)

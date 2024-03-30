@@ -26,6 +26,18 @@ module.exports = {
         hostname: 'gdimg.gmarket.co.kr',
         port: '',
         pathname: '/**'
+      },
+      {
+        protocol: 'http',
+        hostname: '*.tmon.kr',
+        port: '',
+        pathname: '/**'
+      },
+      {
+        protocol: 'http',
+        hostname: '*.ticketmonster.co.kr',
+        port: '',
+        pathname: '/**'
       }
     ]
   },

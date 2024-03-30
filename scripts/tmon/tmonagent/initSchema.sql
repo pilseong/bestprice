@@ -33,6 +33,7 @@ CREATE TABLE tmon.items (
 	deliveryFeePolicy	   character varying(255),
 	deliveryFee          integer,
 	categoryName         character varying(255),
+	url                  character varying(255),
 	pc3ColImageUrl       character varying(255),
 	originalPrice        integer,
 	price                integer,
@@ -46,7 +47,7 @@ CREATE TABLE tmon.batch (
 
 CREATE TABLE tmon.latest (
     id                   integer NOT NULL,
-    batchid                bigInt NOT NULL
+    batchid               bigInt NOT NULL
 );
 
 ALTER TABLE tmon.items OWNER TO postgres;

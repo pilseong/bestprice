@@ -6,9 +6,9 @@ import Image from "next/image"
 import { getGmarketItems } from "@/lib/items"
 
 // export const dynamic = 'force-dynamic'
-export const revalidate = 600
+export const revalidate = 3600
 
-async function HomePage() {
+async function GmarketPage() {
 
   // const featuredReview = await getFeaturedReview()
   const items = await getGmarketItems()
@@ -19,13 +19,7 @@ async function HomePage() {
       <ul className="flex flex-row flex-wrap gap-3 justify-center">
         {
           items && items.map((item, index) => (
-            <li key={item.id} className="list-none mb-4 border w-80 bg-white shadow rounded hover:shadow-xl">
-              <div className="flex justify-around items-center bg-pink-100 text-gray-900">
-                <div className="font-exo2"><span className="text-red-900">할인가 {item.discountPrice}</span><span className="text-sm"> <span className="line-through text-sm">{item.price}</span> ({item.discountRate || '0'}% off)</span></div>
-              </div>
-              <div className="flex justify-around items-center bg-pink-100 text-gray-900">
-                <div><span className="text-gray-700">배송비 {item.deliveryInfo.replace('<br/>', '')}</span></div>
-              </div>
+            <li key={item.id} className="list-none border w-80 bg-white shadow rounded hover:shadow-xl">
               <a href={`${item.linkUrl.replace('http', 'https')}`} target="_blank">
                 <Image src={`https:${item.imageUrl}/300?ver=${item.goodsCode}`} alt=""
                   width={320} height={180} className="rounded-t" />
@@ -39,4 +33,4 @@ async function HomePage() {
   )
 }
 
-export default HomePage
+export default GmarketPage
