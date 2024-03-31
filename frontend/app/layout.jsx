@@ -7,11 +7,11 @@ import { orbitron, exo2, notosanskr } from "./fonts"
 export const metadata = {
   title: {
     default: 'Best Price',
-    template: '%s | Best Price'
+    template: '%s | Pilseong.net'
   }
 }
 
-function RootLayout({ children, }) {
+function RootLayout({ children }) {
   return (
     <html lang="en" className={`${orbitron.variable} ${exo2.variable} ${notosanskr.variable}`}>
       <body className="flex flex-col min-h-screen">
