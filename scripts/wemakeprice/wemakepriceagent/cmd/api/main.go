@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"log"
 	"os"
+	"strconv"
 	"time"
 
 	_ "github.com/lib/pq"
@@ -11,7 +12,7 @@ import (
 
 // const INTERVAL_PERIOD time.Duration = 2 * time.Hour
 
-const INTERVAL_PERIOD time.Duration = 10 * time.Second
+// const INTERVAL_PERIOD time.Duration = 10 * time.Second
 
 var counts int64
 
@@ -24,14 +25,37 @@ type Config struct {
 }
 
 func getNextTickDuration() time.Duration {
+	interval := getInterval()
+
+	log.Printf("Interval time is set to every %v \n", interval)
+
 	now := time.Now()
 	nextTick := time.Date(now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute(), now.Second(), 0, time.Local)
 
 	// 현재 시간 보다 이전일 경우 주기를 더한다.
 	if nextTick.Before(now) {
-		nextTick = nextTick.Add(INTERVAL_PERIOD)
+		nextTick = nextTick.Add(time.Duration(interval))
 	}
 	return time.Until(nextTick)
+}
+
+// 환경 변수에서 읽어온다.
+// 환경 변수가 없으면 10초
+// 환경변수는 기본 hour 단위
+func getInterval() time.Duration {
+	interval_str := os.Getenv("INTERVAL")
+
+	var interval time.Duration
+	if interval_str == "" {
+		interval = 10 * time.Second
+	} else {
+		interval_int, err := strconv.Atoi(interval_str)
+		if err != nil {
+			log.Println("error occurred while getting the INTERVAL TIME :" + err.Error())
+		}
+		interval = time.Duration(interval_int) * time.Hour
+	}
+	return interval
 }
 
 func NewJobTicker() jobTicker {
