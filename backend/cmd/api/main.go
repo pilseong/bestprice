@@ -9,6 +9,7 @@ import (
 	"time"
 
 	_ "github.com/lib/pq"
+	"github.com/pilseong/bestprice/backend/internal/eleventst"
 	"github.com/pilseong/bestprice/backend/internal/gmarket"
 	"github.com/pilseong/bestprice/backend/internal/tmon"
 	"github.com/pilseong/bestprice/backend/internal/wemakeprice"
@@ -22,6 +23,7 @@ type application struct {
 	GmarketDB     gmarket.DatabaseRepo
 	TmonDB        tmon.DatabaseRepo
 	WeMakePriceDB wemakeprice.DatabaseRepo
+	ElevenStDB    eleventst.DatabaseRepo
 }
 
 func setTimezone() {
@@ -93,9 +95,12 @@ func main() {
 	app.GmarketDB = &gmarket.PostgresDBRepo{DB: conn}
 	app.TmonDB = &tmon.PostgresDBRepo{DB: conn}
 	app.WeMakePriceDB = &wemakeprice.PostgresDBRepo{DB: conn}
+	app.ElevenStDB = &eleventst.PostgresDBRepo{DB: conn}
+
 	defer app.GmarketDB.Connection().Close()
 	defer app.TmonDB.Connection().Close()
 	defer app.WeMakePriceDB.Connection().Close()
+	defer app.ElevenStDB.Connection().Close()
 
 	log.Printf("Starting best price service on port %s\n", webPort)
 

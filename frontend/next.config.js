@@ -56,6 +56,12 @@ module.exports = {
         hostname: '*.alicdn.com',
         port: '',
         pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: '*.011st.com',
+        port: '',
+        pathname: '/**'
       }
     ]
   },

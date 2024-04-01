@@ -48,3 +48,13 @@ func (app *application) AllWeMakePriceItems(w http.ResponseWriter, r *http.Reque
 
 	_ = app.writeJSON(w, http.StatusOK, items)
 }
+
+func (app *application) All11StItems(w http.ResponseWriter, r *http.Request) {
+	items, err := app.ElevenStDB.AllItems()
+	if err != nil {
+		app.errorJSON(w, err)
+		return
+	}
+
+	_ = app.writeJSON(w, http.StatusOK, items)
+}

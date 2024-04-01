@@ -47,6 +47,12 @@ export async function getWeMakePriceItems(pageSize) {
   return response
 }
 
+export async function getElevenStItems(pageSize) {
+  const response = await fetchElevenStItems()
+
+  return response
+}
+
 async function fetchGmarketItems() {
   const url = `${SERVER_URL}/gmarket/items`
 
@@ -61,6 +67,18 @@ async function fetchGmarketItems() {
 
 async function fetchTmonItems() {
   const url = `${SERVER_URL}/tmon/items`
+
+  const response = await fetch(url)
+
+  if (!response.ok) {
+    throw new Error(`Server returned ${response.status} for ${url}`)
+  }
+
+  return await response.json()
+}
+
+async function fetchElevenStItems() {
+  const url = `${SERVER_URL}/11st/items`
 
   const response = await fetch(url)
 

@@ -1,11 +1,25 @@
-FROM golang:1.22-alpine as builder
-WORKDIR /app
-COPY . /app
-RUN CGO_ENABLED=0 go build -o eleventstApp ./cmd/api
-RUN chmod +x /app/eleventstApp
+# Stage 1: Modules caching
+FROM golang:1.22 as modules
+COPY go.mod go.sum /modules/
+WORKDIR /modules
+RUN go mod download
 
-FROM alpine:latest
-RUN apk --no-cache add tzdata
-WORKDIR /app
-COPY --from=builder /app/eleventstApp /app
-CMD [ "/app/eleventstApp" ]
+# Stage 2: Build
+FROM golang:1.22 as builder
+COPY --from=modules /go/pkg /go/pkg
+COPY . /workdir
+WORKDIR /workdir
+# Install playwright cli with right version for later use
+RUN PWGO_VER=$(grep -oE "playwright-go v\S+" /workdir/go.mod | sed 's/playwright-go //g') \
+  && go install github.com/playwright-community/playwright-go/cmd/playwright@${PWGO_VER}
+# Build your app
+RUN GOOS=linux GOARCH=amd64 go build -o /bin/myapp ./cmd/api
+
+# Stage 3: Final
+FROM ubuntu:jammy
+COPY --from=builder /go/bin/playwright /bin/myapp /
+RUN apt-get update && apt-get install -y ca-certificates tzdata \
+  # Install dependencies and all browsers (or specify one)
+  && /playwright install chromium --with-deps \
+  && rm -rf /var/lib/apt/lists/*
+CMD ["/myapp"]
