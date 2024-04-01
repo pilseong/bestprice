@@ -13,4 +13,4 @@ services:
       # DSN: "host=192.168.50.141 port=5433 user=postgres password=qwe123 dbname=bestprice search_path=gmarket sslmode=disable timezone=KST connect_timeout=5"
       DSN: "postgresql://postgres:qwe123@192.168.50.141:5433/bestprice?search_path=elevenst&sslmode=disable&timezone=UTC+9&connect_timeout=5"
       TZ: 'Asia/Seoul'
-      # INTERVAL: 2
+      INTERVAL: 2
