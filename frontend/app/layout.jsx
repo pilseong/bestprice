@@ -7,6 +7,7 @@ import { orbitron, exo2, notosanskr } from "./fonts"
 export const metadata = {
   title: {
     default: 'Best Price',
+    description: '가장 많이 팔리는 제품만 모아서 보여주는 핫딜 모음',
     template: '%s | Pilseong.net'
   }
 }

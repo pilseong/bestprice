@@ -47,7 +47,7 @@ func getInterval() time.Duration {
 
 	var interval time.Duration
 	if interval_str == "" {
-		interval = 10 * time.Second
+		interval = 20 * time.Second
 	} else {
 		interval_int, err := strconv.Atoi(interval_str)
 		if err != nil {
@@ -136,14 +136,13 @@ func main() {
 	app := Config{
 		DB: conn,
 	}
-
 	setDB(conn)
 
 	// app.mockData()
 	jt := NewJobTicker()
 	for {
 		<-jt.t.C
-		log.Println("Starting data fetching from we make price")
+		log.Println("Starting data fetching from 11st")
 
 		app.getData()
 

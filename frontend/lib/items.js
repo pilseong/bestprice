@@ -41,6 +41,12 @@ export async function getTmonItems(pageSize) {
   return response
 }
 
+export async function getWeMakePriceItems(pageSize) {
+  const response = await fetchWeMakePriceItems()
+
+  return response
+}
+
 async function fetchGmarketItems() {
   const url = `${SERVER_URL}/gmarket/items`
 
@@ -55,6 +61,18 @@ async function fetchGmarketItems() {
 
 async function fetchTmonItems() {
   const url = `${SERVER_URL}/tmon/items`
+
+  const response = await fetch(url)
+
+  if (!response.ok) {
+    throw new Error(`Server returned ${response.status} for ${url}`)
+  }
+
+  return await response.json()
+}
+
+async function fetchWeMakePriceItems() {
+  const url = `${SERVER_URL}/wemakeprice/items`
 
   const response = await fetch(url)
 

@@ -38,6 +38,24 @@ module.exports = {
         hostname: '*.ticketmonster.co.kr',
         port: '',
         pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: '*.wemep.co.kr',
+        port: '',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: '*.wemakeprice.com',
+        port: '',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: '*.alicdn.com',
+        port: '',
+        pathname: '/**'
       }
     ]
   },

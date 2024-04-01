@@ -19,17 +19,17 @@ function Navbar() {
         <h2 className="text-gray-600 py-3 text-2xl font-bold uppercase font-orbitron">핫딜 TO 구매욕 Booster</h2>
       </div>
       <ul className="hidden sm:block sm:flex sm:justify-around text-center">
-        <li className={`py-4 text-gray-100 text-sm flex-grow hover:underline font-semibold bg-gmarket ${pathname === '/gmarket' ? 'text-xl' : 'text-sm'}`}>
-          <Link href="/gmarket">지마켓</Link>
+        <li className={`py-4 text-gray-100 text-sm flex-grow hover:underline font-semibold bg-gmarket ${pathname === '/gmarket' ? '' : ''}`}>
+          <Link href="/gmarket" className={`${pathname === '/gmarket' ? 'font-extrabold px-4 py-1 bg-green-600 rounded-full' : 'font-normal'}`}>지마켓</Link>
         </li>
-        <li className="py-4 text-gray-100 flex-grow text-sm hover:underline bg-red-600 font-semibold">
-          <Link href="/gmarket">위메프</Link>
+        <li className={`py-4 text-gray-100 flex-grow text-sm hover:underline bg-red-600 font-semibold ${pathname === '/wemakeprice' ? '' : ''}`}>
+          <Link href="/wemakeprice" className={`${pathname === '/wemakeprice' ? 'font-extrabold px-4 py-1 bg-red-400 rounded-full' : 'font-normal'}`}>위메프</Link>
         </li>
-        <li className="py-4 text-gray-100 flex-grow text-sm hover:underline bg-red-500 font-semibold">
-          <Link href="/tmon">11번가</Link>
+        <li className={`py-4 text-gray-100 flex-grow text-sm hover:underline bg-red-500 font-semibold ${pathname === '/11st' ? '' : ''}`}>
+          <Link href="/11st" className={`${pathname === '/11st' ? 'font-extrabold' : 'font-normal'}`}>11번가</Link>
         </li>
-        <li className="py-4 text-gray-100 flex-grow text-sm hover:underline bg-orange-600 font-semibold">
-          <Link href="/tmon">티몬</Link>
+        <li className={`py-4 text-gray-100 flex-grow text-sm hover:underline bg-orange-600 font-semibold ${pathname === '/tmon' ? '' : ''}`}>
+          <Link href="/tmon" className={`${pathname === '/tmon' ? 'font-extrabold px-4 py-1 bg-orange-400 rounded-full' : 'font-normal'}`}>티몬</Link>
         </li>
       </ul>
     </nav>

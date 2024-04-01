@@ -38,3 +38,13 @@ func (app *application) AllTmonItems(w http.ResponseWriter, r *http.Request) {
 
 	_ = app.writeJSON(w, http.StatusOK, items)
 }
+
+func (app *application) AllWeMakePriceItems(w http.ResponseWriter, r *http.Request) {
+	items, err := app.WeMakePriceDB.AllItems()
+	if err != nil {
+		app.errorJSON(w, err)
+		return
+	}
+
+	_ = app.writeJSON(w, http.StatusOK, items)
+}

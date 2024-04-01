@@ -11,36 +11,6 @@ import (
 	"github.com/pilseong/wemakepriceagent/models"
 )
 
-// func (app *Config) mockData() {
-// 	items := []models.Item{{
-// 		ID:                  0,
-// 		BatchID:             0,
-// 		Rank:                0,
-// 		GoodsCode:           "3030854245",
-// 		GoodsName:           "(15%+10%) 초등 도서 베스트 100 특가",
-// 		LinkURL:             "http://item.gmarket.co.kr/Item?goodscode=3030854245",
-// 		DiscountPrice:       "15,370",
-// 		Price:               "22,000",
-// 		DeliveryInfo:        "무료",
-// 		ItemPriceType:       "Normal",
-// 		ImageURL:            "//gdimg.gmarket.co.kr/3030854245/still",
-// 		DiscountRate:        30,
-// 		ExpressShippingText: "",
-// 		DeliveryText:        "무료배송",
-// 		ConsultingPeriod:    "",
-// 		IsPriceExpose:       true,
-// 		IsStartPrice:        false,
-// 		IsFreeShipping:      true,
-// 		IsSmileShipping:     false,
-// 		IsExpressShipping:   false,
-// 		IsCartVisible:       false,
-// 		IsBigSmileItem:      false,
-// 		ImageChgDt:          1711519780,
-// 	}}
-
-// 	app.BulkCreate(items)
-// }
-
 func (app *Config) getData() {
 
 	wemakepriceServiceURL := "https://front.wemakeprice.com/api/listing/v1/best/detail.json?groupId&categoryId&listType&page=1&perPage=200&maxCount&cacheId&os=pc&version&domain=listing-api.wemakeprice.com&path=%2Fv1%2Fbest%2Fdetail&debug=false"
@@ -82,7 +52,7 @@ func (app *Config) getData() {
 
 	// 결과 출력
 	var result models.WemakepriceBEST
-	if err := json.Unmarshal(bytes, &result); err != nil { // Parse []byte to the go struct pointer
+	if err := json.Unmarshal(bytes, &result); err != nil {
 		fmt.Println("Can not unmarshal JSON")
 	}
 
