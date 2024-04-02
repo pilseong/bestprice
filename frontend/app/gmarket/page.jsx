@@ -16,10 +16,10 @@ async function GmarketPage() {
 
   return (
     <>
-      <ul className="flex flex-row flex-wrap gap-3 justify-center">
+      <ul className="flex flex-row flex-wrap gap-4 justify-center">
         {
           items && items.map((item, index) => (
-            <li key={item.id} className="list-none mb-4 border w-80 bg-white shadow rounded hover:shadow-xl flex flex-col">
+            <li key={item.id} className="list-none mb-4 border w-72 bg-white shadow rounded hover:shadow-xl flex flex-col">
               <a href={`${item.linkUrl.replace('http', 'https')}`} target="_blank">
                 <div>
                   <Image src={`https:${item.imageUrl}/300?ver=${item.goodsCode}`} alt=""

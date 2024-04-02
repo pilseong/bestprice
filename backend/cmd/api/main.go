@@ -58,8 +58,8 @@ func openDB(dataSourceName string) (*sql.DB, error) {
 var counts int64
 
 func connectToDB() *sql.DB {
-	// dataSourceName := os.Getenv("DSN")
-	dataSourceName := "postgresql://postgres:qwe123@192.168.50.141:5433/bestprice?sslmode=disable&timezone=UTC+9&connect_timeout=5"
+	dataSourceName := os.Getenv("DSN")
+	// dataSourceName := "postgresql://postgres:qwe123@192.168.50.141:5433/bestprice?sslmode=disable&timezone=UTC+9&connect_timeout=5"
 
 	log.Println(dataSourceName)
 

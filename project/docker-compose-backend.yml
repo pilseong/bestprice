@@ -1,0 +1,20 @@
+version: '3.9'
+
+# networks:
+#   bestprice:
+#     driver: bridge
+
+services:
+  bankend:
+    build:
+      context: ../backend/
+      dockerfile: backend.dockerfile
+    restart: "no"
+    deploy:
+      mode: replicated
+      replicas: 1
+    # networks:
+    #   - bestprice
+    environment:
+      DSN: "postgresql://postgres:qwe123@192.168.50.141:5433/bestprice?sslmode=disable&timezone=UTC+9&connect_timeout=5"
+      TZ: 'Asia/Seoul'

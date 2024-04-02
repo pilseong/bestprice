@@ -15,14 +15,14 @@ async function WeMakePricePage() {
 
   return (
     <>
-      <ul className="flex flex-row flex-wrap gap-3 justify-center">
+      <ul className="flex flex-row flex-wrap gap-4 justify-center">
         {
           items && items.map((item, index) => (
-            <li key={item.id} className="list-none border w-80 bg-white shadow rounded hover:shadow-xl mb-4 flex flex-col">
+            <li key={item.id} className="list-none border w-72 bg-white shadow rounded hover:shadow-xl mb-4 flex flex-col">
               <a href={`https://${item.linkType.toLowerCase() === 'ticket' ? 'ticket' : item.linkType.toLowerCase() === 'tour' ? 'tour.wd' : 'front'}.wemakeprice.com/${(item.linkType.toLowerCase() === 'ticket' || item.linkType.toLowerCase() === 'prod') ? 'product/' : item.linkType.toLowerCase() === 'tour' ? 'wmp/deal.html?dealId=' : item.linkType.toLowerCase() + '/'}${item.linkInfo}`} target="_blank">
                 <Image src={`${item.mediumImgUrl}`} alt=""
                   width={320} height={180} className="rounded-t" />
-                <h2 className="p-2 border-t text-sm font-semibold font-notosanskr">{item.dispNm}</h2>
+                <h2 className="p-2 border-t text-sm font-notosanskr">{item.dispNm}</h2>
               </a>
               <div className="mt-auto">
                 <div className="flex justify-around items-center bg-pink-100 text-gray-900">

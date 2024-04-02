@@ -18,14 +18,14 @@ async function TmonPage() {
 
   return (
     <>
-      <ul className="flex flex-row flex-wrap gap-3 justify-center">
+      <ul className="flex flex-row flex-wrap gap-4 justify-center">
         {
           items && items.map((item, index) => (
-            <li key={item.id} className="list-none border w-80 bg-white shadow rounded hover:shadow-xl mb-4 flex flex-col">
+            <li key={item.id} className="list-none border w-72 bg-white shadow rounded hover:shadow-xl mb-4 flex flex-col">
               <a href={`${item.url}`} target="_blank">
                 <Image src={`${item.pc3ColImageUrl}`} alt=""
                   width={320} height={180} className="rounded-t" />
-                <h2 className="p-2 border-t text-sm font-semibold font-notosanskr">{item.title}</h2>
+                <h2 className="p-2 border-t text-sm font-notosanskr">{item.title}</h2>
               </a>
               <div className="mt-auto">
                 <div className="flex justify-around items-center bg-pink-100 text-gray-900">

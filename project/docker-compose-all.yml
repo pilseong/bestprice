@@ -1,0 +1,42 @@
+version: '3.9'
+
+networks:
+  bestprice:
+    driver: bridge
+
+services:
+  nginx:
+    build: 
+      context: ./nginx/
+    ports:
+      - 6443:443
+      - 6001:80
+    volumes:
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - ./pilseong.net_ecc/:/opt/
+    networks:
+      - bestprice
+    environment:
+      - TZ=Asia/Seoul
+  
+  bankend:
+    build:
+      context: ../backend/
+      dockerfile: backend.dockerfile
+    restart: "no"
+    deploy:
+      mode: replicated
+      replicas: 1
+    networks:
+      - bestprice
+    environment:
+      DSN: "postgresql://postgres:qwe123@192.168.50.141:5433/bestprice?sslmode=disable&timezone=UTC+9&connect_timeout=5"
+      TZ: 'Asia/Seoul'
+
+  frontend:
+    build:
+      context: ../frontend/
+      dockerfile: frontend.dockerfile
+
+    networks:
+      - bestprice

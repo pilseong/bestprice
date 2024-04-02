@@ -3,6 +3,7 @@ import { usePathname } from 'next/navigation'
 
 import Link from "next/link"
 import React from 'react'
+import Image from "next/image"
 
 function Navbar() {
   const pathname = usePathname()
@@ -12,7 +13,9 @@ function Navbar() {
   return (
     <nav className="flex flex-col font-notosanskr">
       <div className="flex justify-center sm:flex sm:justify-between bg-trust items-center px-5 h-14 sm:h-8">
-        <div className="text-gray-600 uppercase font-orbitron">Pilseong.net</div>
+        <div className="text-gray-600 uppercase font-orbitron flex gap-2">
+          <Image src="/icon.jpg" width={24} height={24} alt="logo for pilseong.net" />
+          Pilseong.net</div>
         <div className="hidden sm:block  font-exo2">Best Price Based On Sales</div>
       </div>
       <div className="text-center bg-slate-50">
