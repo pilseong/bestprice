@@ -7,7 +7,7 @@ networks:
 services:
   nginx:
     build: 
-      context: ./nginx/
+      context: ../nginx/
     ports:
       - 6443:443
       - 6001:80
@@ -23,6 +23,8 @@ services:
     build:
       context: ../backend/
       dockerfile: backend.dockerfile
+    ports:
+      - 5006:5006
     restart: "no"
     deploy:
       mode: replicated

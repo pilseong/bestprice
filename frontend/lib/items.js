@@ -1,5 +1,7 @@
 
-const SERVER_URL = 'http://localhost:5006'
+const SERVER_URL = process.env.SERVER_URL
+
+console.log(SERVER_URL)
 
 export async function getFeaturedReview() {
   const reviews = await getGmarketItems()
