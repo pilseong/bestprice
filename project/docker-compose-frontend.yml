@@ -18,5 +18,5 @@ services:
     # networks:
     #   - bestprice
     environment:
-      SERVER_URL: "http://192.168.50.167:5006"
+      SERVER_URL: "http://192.168.50.141:5006"
       TZ: 'Asia/Seoul'
