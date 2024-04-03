@@ -3,6 +3,7 @@ import React from 'react'
 import './globals.css'
 import Navbar from "../components/Navbar"
 import { orbitron, exo2, notosanskr, inter } from "./fonts"
+import Script from "next/script"
 
 export const metadata = {
   title: {
@@ -16,7 +17,7 @@ function RootLayout({ children }) {
   return (
     <html lang="en" className={`${orbitron.variable} ${exo2.variable} ${notosanskr.variable} ${inter.variable}`}>
       <body className="flex flex-col min-h-screen bg-gray-200">
-        <header className=" sticky top-0">
+        <header className=" sticky top-0 z-0">
           <Navbar />
         </header>
         <main className="container mx-auto py-3 grow">
@@ -28,6 +29,7 @@ function RootLayout({ children }) {
             Copyright 2024 Pilseong Heo
           </div>
         </footer>
+        <Script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></Script>
       </body>
     </html>
   )
