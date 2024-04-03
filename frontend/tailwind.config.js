@@ -15,7 +15,8 @@ module.exports = {
         // sans: ["var(--font-exo2)", "sans-serif"],
         orbitron: ["var(--font-orbitron)", "sans-serif"],
         notosanskr: ["var(--font-notosanskr)", "sans-serif"],
-        exo2: ["var(--font-exo2)", "sans-serif"]
+        exo2: ["var(--font-exo2)", "sans-serif"],
+        inter: ["var(--font-inter)", "sans-serif"],
       },
     },
   },

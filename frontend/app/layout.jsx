@@ -2,7 +2,7 @@ import React from 'react'
 
 import './globals.css'
 import Navbar from "../components/Navbar"
-import { orbitron, exo2, notosanskr } from "./fonts"
+import { orbitron, exo2, notosanskr, inter } from "./fonts"
 
 export const metadata = {
   title: {
@@ -14,7 +14,7 @@ export const metadata = {
 
 function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${orbitron.variable} ${exo2.variable} ${notosanskr.variable}`}>
+    <html lang="en" className={`${orbitron.variable} ${exo2.variable} ${notosanskr.variable} ${inter.variable}`}>
       <body className="flex flex-col min-h-screen bg-gray-200">
         <header className=" sticky top-0 shadow-md border-b-4">
           <Navbar />
