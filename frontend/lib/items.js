@@ -8,29 +8,6 @@ export async function getFeaturedReview() {
   return reviews[0]
 }
 
-export async function getReview(slug) {
-  const { data } = await fetchGmarketItems({
-    filters: { slug: { $eq: slug } },
-    fields: ['slug', 'title', 'subtitle', 'publishedAt', 'body'],
-    populate: { image: { fields: ['url'] } },
-    pagination: { pageSize: 1, withCount: false },
-  })
-
-
-  if (data.length === 0) return null
-
-  const { attributes: { title, subtitle, publishedAt, image, body } } = data[0]
-
-  return {
-    slug,
-    title,
-    subtitle,
-    date: publishedAt.slice(0, 'yyyy-mm-dd'.length),
-    image: `${SERVER_URL}${image.data.attributes.url}`,
-    body: marked(body)
-  }
-}
-
 export async function getGmarketItems(pageSize) {
   const response = await fetchGmarketItems()
 

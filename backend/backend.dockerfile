@@ -8,4 +8,6 @@ FROM alpine:latest
 RUN apk --no-cache add tzdata
 WORKDIR /app
 COPY --from=builder /app/backend /app
+EXPOSE 5006
+ENV PORT 5006
 CMD [ "/app/backend" ]
