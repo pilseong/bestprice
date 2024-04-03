@@ -16,7 +16,7 @@ function RootLayout({ children }) {
   return (
     <html lang="en" className={`${orbitron.variable} ${exo2.variable} ${notosanskr.variable} ${inter.variable}`}>
       <body className="flex flex-col min-h-screen bg-gray-200">
-        <header className=" sticky top-0 shadow-md border-b-4">
+        <header className=" sticky top-0">
           <Navbar />
         </header>
         <main className="container mx-auto py-3 grow">

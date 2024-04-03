@@ -22,7 +22,7 @@ function Navbar() {
         </Link>
         <div className="hidden sm:block font-inter">Best Price Based On Sales</div>
       </div>
-      <div className="bg-slate-50 flex items-center justify-between sm:justify-center">
+      <div className="bg-slate-50 flex items-center justify-between sm:justify-center shadow-md sm:shadow-none">
         <h2 className="text-gray-600 px-4 py-3 text-2xl sm:px-0 font-bold uppercase font-orbitron">
           {pathname !== '/' ? pathname : '핫딜 TO 구매욕 Booster'}
         </h2>
@@ -33,39 +33,24 @@ function Navbar() {
 
       {
         menuOpen && (
-          <div className="flex-col text-center ml-auto w-48 sm:hidden" >
+          <div className="flex-col text-center ml-auto w-48 sm:hidden bg-slate-50" >
             <div className={`py-4 text-gray-100 text-sm hover:underline font-semibold bg-gmarket ${pathname === '/gmarket' ? '' : ''}`}>
-              <Link href="/gmarket" className={`${pathname === '/gmarket' ? 'font-extrabold px-4 py-1 bg-green-600 rounded-full' : 'font-normal'}`}>지마켓</Link>
+              <Link href="/gmarket" onClick={() => setMenuOpen(false)} className={`${pathname === '/gmarket' ? 'font-extrabold px-4 py-1 bg-green-600 rounded-full' : 'font-normal'}`}>지마켓</Link>
             </div>
             <div className={`py-4 text-gray-100 text-sm hover:underline bg-red-600 font-semibold ${pathname === '/wemakeprice' ? '' : ''}`}>
-              <Link href="/wemakeprice" className={`${pathname === '/wemakeprice' ? 'font-extrabold px-4 py-1 bg-red-500 rounded-full' : 'font-normal'}`}>위메프</Link>
+              <Link href="/wemakeprice" onClick={() => setMenuOpen(false)} className={`${pathname === '/wemakeprice' ? 'font-extrabold px-4 py-1 bg-red-500 rounded-full' : 'font-normal'}`}>위메프</Link>
             </div>
             <div className={`py-4 text-gray-100 text-sm hover:underline bg-red-500 font-semibold ${pathname === '/11st' ? '' : ''}`}>
-              <Link href="/11st" className={`${pathname === '/11st' ? 'font-extrabold px-4 py-1 bg-red-400 rounded-full' : 'font-normal'}`}>11번가</Link>
+              <Link href="/11st" onClick={() => setMenuOpen(false)} className={`${pathname === '/11st' ? 'font-extrabold px-4 py-1 bg-red-400 rounded-full' : 'font-normal'}`}>11번가</Link>
             </div>
             <div className={`py-4 text-gray-100 text-sm hover:underline bg-orange-600 font-semibold ${pathname === '/tmon' ? '' : ''}`}>
-              <Link href="/tmon" className={`${pathname === '/tmon' ? 'font-extrabold px-4 py-1 bg-orange-400 rounded-full' : 'font-normal'}`}>티몬</Link>
+              <Link href="/tmon" onClick={() => setMenuOpen(false)} className={`${pathname === '/tmon' ? 'font-extrabold px-4 py-1 bg-orange-400 rounded-full' : 'font-normal'}`}>티몬</Link>
             </div>
           </div>
         )
       }
 
-      {/* <ul className="text-center flex flex-col justify-end">
-        <li className={`py-4 text-gray-100 text-sm hover:underline font-semibold bg-gmarket ${pathname === '/gmarket' ? '' : ''}`}>
-          <Link href="/gmarket" className={`${pathname === '/gmarket' ? 'font-extrabold px-4 py-1 bg-green-600 rounded-full' : 'font-normal'}`}>지마켓</Link>
-        </li>
-        <li className={`py-4 text-gray-100 text-sm hover:underline bg-red-600 font-semibold ${pathname === '/wemakeprice' ? '' : ''}`}>
-          <Link href="/wemakeprice" className={`${pathname === '/wemakeprice' ? 'font-extrabold px-4 py-1 bg-red-500 rounded-full' : 'font-normal'}`}>위메프</Link>
-        </li>
-        <li className={`py-4 text-gray-100 text-sm hover:underline bg-red-500 font-semibold ${pathname === '/11st' ? '' : ''}`}>
-          <Link href="/11st" className={`${pathname === '/11st' ? 'font-extrabold px-4 py-1 bg-red-400 rounded-full' : 'font-normal'}`}>11번가</Link>
-        </li>
-        <li className={`py-4 text-gray-100 text-sm hover:underline bg-orange-600 font-semibold ${pathname === '/tmon' ? '' : ''}`}>
-          <Link href="/tmon" className={`${pathname === '/tmon' ? 'font-extrabold px-4 py-1 bg-orange-400 rounded-full' : 'font-normal'}`}>티몬</Link>
-        </li>
-      </ul> */}
-
-      <ul className="hidden sm:block sm:flex text-center">
+      <ul className="hidden sm:block sm:flex text-center shadow-md border-b-2">
         <li className={`py-4 text-gray-100 text-sm w-[25%] hover:underline font-semibold bg-gmarket ${pathname === '/gmarket' ? '' : ''}`}>
           <Link href="/gmarket" className={`${pathname === '/gmarket' ? 'font-extrabold px-4 py-1 bg-green-600 rounded-full' : 'font-normal'}`}>지마켓</Link>
         </li>
