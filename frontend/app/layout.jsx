@@ -29,7 +29,6 @@ function RootLayout({ children }) {
             Copyright 2024 Pilseong Heo
           </div>
         </footer>
-        <Script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></Script>
       </body>
     </html>
   )

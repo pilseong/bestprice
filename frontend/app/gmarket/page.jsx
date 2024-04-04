@@ -20,23 +20,6 @@ async function GmarketPage() {
         {
           items && items.map((item, index) => (
             <>
-              {index === 0 && (
-                <div className="mt-4 sm:hidden">
-                  <ins className="kakao_ad_area" style={{ 'display': 'none' }}
-                    data-ad-unit="DAN-UBInk7vY9jPJ4GhO"
-                    data-ad-width="320"
-                    data-ad-height="100"></ins>
-                </div>
-              )}
-              {index === 5 && (
-                <div className="mt-4 sm:hidden">
-                  <ins className="kakao_ad_area" style={{ 'display': 'none' }}
-                    data-ad-unit="DAN-NEhxfcSLAPhHGkTU"
-                    data-ad-width="300"
-                    data-ad-height="250"></ins>
-                </div >
-              )}
-
               <div key={item.id} className="list-none mb-4 border w-72 bg-white shadow rounded hover:shadow-xl flex flex-col">
                 <a href={`${item.linkUrl.replace('http', 'https')}`} target="_blank">
                   <div>

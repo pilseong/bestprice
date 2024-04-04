@@ -1,5 +1,9 @@
 
-const SERVER_URL = process.env.SERVER_URL
+let SERVER_URL = `http://host.docker.internal:${process.env.SERVER_PORT}`
+
+if (!process.env.SERVER_PORT) {
+  SERVER_URL = "localhost:5006"
+}
 
 console.log(SERVER_URL)
 

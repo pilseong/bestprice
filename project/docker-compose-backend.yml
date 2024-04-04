@@ -18,5 +18,5 @@ services:
     # networks:
     #   - bestprice
     environment:
-      DSN: "postgresql://postgres:qwe123@192.168.50.141:5433/bestprice?sslmode=disable&timezone=UTC+9&connect_timeout=5"
+      DSN: "postgresql://postgres:qwe123@host.docker.internal:5433/bestprice?sslmode=disable&timezone=UTC+9&connect_timeout=5"
       TZ: 'Asia/Seoul'
