@@ -1,8 +1,8 @@
 
-let SERVER_URL = `http://host.docker.internal:${process.env.SERVER_PORT}`
+let SERVER_URL = `http://backend:${process.env.SERVER_PORT}`
 
 if (!process.env.SERVER_PORT) {
-  SERVER_URL = "localhost:5006"
+  SERVER_URL = "http://localhost:5006"
 }
 
 console.log(SERVER_URL)
