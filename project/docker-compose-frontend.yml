@@ -1,8 +1,8 @@
 version: '3.9'
 
-# networks:
-#   bestprice:
-#     driver: bridge
+networks:
+  bestprice:
+    driver: bridge
 
 services:
   frontend:
@@ -15,8 +15,8 @@ services:
     deploy:
       mode: replicated
       replicas: 1
-    # networks:
-    #   - bestprice
+    networks:
+      - bestprice
     environment:
       SERVER_URL: "backend:5006"
       TZ: 'Asia/Seoul'
