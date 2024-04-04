@@ -1,5 +1,5 @@
 
-let SERVER_URL = `http://project-bankend-1:${process.env.SERVER_PORT}`
+let SERVER_URL = `http://project-backend-1:${process.env.SERVER_PORT}`
 
 if (!process.env.SERVER_PORT) {
   SERVER_URL = "http://localhost:5006"

@@ -1,8 +1,8 @@
 version: '3.9'
 
-networks:
-  bestprice:
-    driver: bridge
+# networks:
+#   bestprice:
+#     driver: bridge
 
 services:
   backend:
@@ -15,8 +15,8 @@ services:
     deploy:
       mode: replicated
       replicas: 1
-    networks:
-      - bestprice
+    # networks:
+    #   - bestprice
     environment:
       DSN: "postgresql://postgres:qwe123@postgres-nas:5433/bestprice?sslmode=disable&timezone=UTC+9&connect_timeout=5"
       TZ: 'Asia/Seoul'
