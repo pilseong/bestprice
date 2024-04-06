@@ -5,8 +5,8 @@ import Link from "next/link"
 import Image from "next/image"
 import { getGmarketItems } from "@/lib/items"
 
-// export const dynamic = 'force-dynamic'
-export const revalidate = 600
+export const dynamic = 'force-dynamic'
+// export const revalidate = 600
 
 async function GmarketPage() {
 
