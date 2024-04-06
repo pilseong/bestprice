@@ -1,9 +1,10 @@
 
-let SERVER_URL = `http://192.168.50.141:${process.env.SERVER_PORT}`
+// let SERVER_URL = `http://192.168.50.141:${process.env.SERVER_PORT}`
 
-if (!process.env.SERVER_PORT) {
-  SERVER_URL = "http://localhost:5006"
-}
+// if (!process.env.SERVER_PORT) {
+//   SERVER_URL = "http://localhost:5006"
+// }
+let SERVER_URL = `http://192.168.50.141:5006`
 
 console.log(SERVER_URL)
 
