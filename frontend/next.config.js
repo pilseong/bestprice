@@ -63,6 +63,12 @@ module.exports = {
         hostname: '*.011st.com',
         port: '',
         pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: '*.coupangcdn.com',
+        port: '',
+        pathname: '/**'
       }
     ]
   },
