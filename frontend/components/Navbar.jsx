@@ -18,9 +18,9 @@ function Navbar() {
         <Link href="/">
           <div className="text-gray-600 uppercase font-inter flex gap-2">
             <Image src="/icon.jpg" width={24} height={24} alt="logo for pilseong.net" />
-            Pilseong.net</div>
+            필성.net</div>
         </Link>
-        <div className="hidden sm:block font-inter">판매량 기준 핫딜 모음 - 수익 링크 없는 다이렉트 링크</div>
+        <div className="hidden sm:block font-inter">판매량 기준 핫딜 모음</div>
       </div>
       <div className="bg-slate-50 flex items-center justify-between sm:justify-center shadow-md sm:shadow-none">
         <h2 className="text-gray-600 px-4 py-3 text-2xl sm:px-0 font-bold uppercase font-orbitron">
