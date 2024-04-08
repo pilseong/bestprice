@@ -34,6 +34,9 @@ function Navbar() {
       {
         menuOpen && (
           <div className="flex-col text-center ml-auto w-48 sm:hidden bg-slate-50" >
+            <div className={`py-4 text-gray-100 text-sm hover:underline font-semibold bg-trust ${pathname === '/gmarket' ? '' : ''}`}>
+              <Link href="/" onClick={() => setMenuOpen(false)} className={`${pathname === '/' ? 'font-bold px-4 py-1 bg-green-500 rounded-full' : 'font-normal'}`}>메인 페이지</Link>
+            </div>
             <div className={`py-4 text-gray-100 text-sm hover:underline font-semibold bg-gmarket ${pathname === '/gmarket' ? '' : ''}`}>
               <Link href="/gmarket" onClick={() => setMenuOpen(false)} className={`${pathname === '/gmarket' ? 'font-extrabold px-4 py-1 bg-green-600 rounded-full' : 'font-normal'}`}>지마켓</Link>
             </div>
