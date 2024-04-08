@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { getTmonItems } from "@/lib/items"
 
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 export const revalidate = 600
 
 async function TmonPage() {
@@ -32,9 +32,16 @@ async function TmonPage() {
                   <div className="font-exo2 pt-1"><span className="text-red-900">할인가 {item.price.toLocaleString()}</span><span className="text-sm"> <span className="line-through text-sm">{item.originalPrice.toLocaleString()}</span> ({item.discountRate || '0'}% off)</span></div>
                 </div>
                 <div className="flex justify-around items-center bg-pink-100 text-gray-900">
-                  <div><span className="font-exo2 text-gray-700 text-sm">{item.deliveryFeePolicy !== '' ? '배송비' : ''} {
-                    item.deliveryFeePolicy === 'FREE' ? '무료' : item.deliveryFeePolicy === 'CONDITION' ? '조건부 무료' : item.deliveryFeePolicy === '' ? '디지털 구폰' : ''
-                  } {!(item.deliveryFeePolicy === 'FREE' || item.deliveryFeePolicy === '') ? item.deliveryFee : ''}</span></div>
+                  <div><span className="font-exo2 text-gray-700 text-sm">{item.deliveryFeePolicy !== '' ? '배송비' : ''}
+                    {
+                      item.deliveryFeePolicy === 'FREE' ? '무료'
+                        : item.deliveryFeePolicy === 'CONDITION' ? '조건부 무료'
+                          : item.deliveryFeePolicy === '' ? '디지털 구폰' : ''
+                    }
+                    {
+                      !(item.deliveryFeePolicy === 'FREE' || item.deliveryFeePolicy === '') ? item.deliveryFee : ''
+                    }
+                  </span></div>
                 </div>
               </div>
             </li>

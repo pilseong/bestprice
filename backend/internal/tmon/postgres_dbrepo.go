@@ -18,7 +18,7 @@ func (m *PostgresDBRepo) Connection() *sql.DB {
 	return m.DB
 }
 
-func (m *PostgresDBRepo) AllItems() ([]*Item, error) {
+func (m *PostgresDBRepo) AllItems(pageNo int, pageSize int) ([]*Item, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), dbTimeout)
 	defer cancel()
 
@@ -61,9 +61,11 @@ func (m *PostgresDBRepo) AllItems() ([]*Item, error) {
 		  batchid = $1
 		order by
 			rank
+		limit $2
+		offset $3			
 	`
 
-	rows, err := m.DB.QueryContext(ctx, query, latest.BatchId)
+	rows, err := m.DB.QueryContext(ctx, query, latest.BatchId, pageSize, (pageNo-1)*pageSize)
 	if err != nil {
 		log.Printf("Failed to get the items of batch id %d : %v", latest.BatchId, err.Error())
 		return nil, err

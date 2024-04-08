@@ -24,6 +24,7 @@ func (app *application) routes() http.Handler {
 	mux.Get("/tmon/items", app.AllTmonItems)
 	mux.Get("/wemakeprice/items", app.AllWeMakePriceItems)
 	mux.Get("/11st/items", app.All11StItems)
+	mux.Get("/front/items", app.FrontItems)
 	// mux.Get("/movies/{id}", app.GetMovie)
 
 	// mux.Get("/genres", app.AllGenres)

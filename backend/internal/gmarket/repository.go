@@ -6,7 +6,7 @@ import (
 
 type DatabaseRepo interface {
 	Connection() *sql.DB
-	AllItems() ([]*Item, error)
+	AllItems(pageNo, pageSize int) ([]*Item, error)
 	// GetUserByEmail(email string) (*models.User, error)
 	// GetUserByID(id int) (*models.User, error)
 

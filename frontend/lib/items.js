@@ -3,9 +3,8 @@ let SERVER_URL = process.env.SERVER_URL
 if (!process.env.SERVER_URL) {
   SERVER_URL = "http://host.docker.internal:5006"
 }
-// let SERVER_URL = `http://192.168.50.167:5006`
 
-console.log(SERVER_URL)
+// console.log(SERVER_URL)
 
 export async function getFeaturedReview() {
   const reviews = await getGmarketItems()
@@ -36,6 +35,38 @@ export async function getElevenStItems(pageSize) {
   return response
 }
 
+export async function getDealItems(slug) {
+  console.log("getdeal", slug)
+  switch (slug) {
+    case 'gmarket':
+      return await getGmarketItems()
+    case 'wemakeprice':
+      return await getWeMakePriceItems()
+    case '11st':
+      return await getElevenStItems()
+    case 'tmon':
+      console.log("ttttmon")
+      return await getTmonItems()
+    default:
+  }
+}
+
+export async function getFrontItems() {
+  console.log("getFrontItems")
+
+
+  const url = `${SERVER_URL}/front/items`
+  console.log(url)
+
+  const response = await fetch(url)
+
+  if (!response.ok) {
+    throw new Error(`Server returned ${response.status} for ${url}`)
+  }
+
+  return await response.json()
+}
+
 async function fetchGmarketItems() {
   const url = `${SERVER_URL}/gmarket/items`
 
@@ -60,8 +91,16 @@ async function fetchTmonItems() {
   return await response.json()
 }
 
-async function fetchElevenStItems() {
-  const url = `${SERVER_URL}/11st/items`
+async function fetchElevenStItems(pageNo, pageSize) {
+  const params = new URLSearchParams({
+    pageNo: pageNo || 1,
+    pageSize: pageSize || 200
+  })
+
+  const url = `${SERVER_URL}/11st/items?${params.toString()}`
+
+  console.log(url)
+
 
   const response = await fetch(url)
 
