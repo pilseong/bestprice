@@ -21,7 +21,7 @@ async function HomePage() {
             <>
               <div key={item.id} className="list-none mb-4 border w-72 bg-white shadow rounded hover:shadow-xl flex flex-col">
                 <div className="flex justify-between">
-                  <div className={`w-8 text-center ${item.rank < 5 ? 'bg-red-400 text-white' : 'bg-blue-300'} `}>{item.rank}</div>
+                  <div className={`w-8 text-center ${item.rank < 5 ? 'bg-red-400 text-white' : 'bg-blue-300 text-gray-100'} `}>{item.rank}</div>
                   <div className=
                     {`capitalize pr-2 flex-1 text-right 
                   ${item.shoppingMall === "지마켓" ? 'bg-green-600 text-gray-200' :
