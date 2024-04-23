@@ -91,6 +91,8 @@ func connectToDB() *sql.DB {
 		conn, err := openDB(dataSourceName)
 		if err != nil {
 			log.Println("cannot open postgres", err)
+			dataSourceName = "postgresql://postgres:qwe123@192.168.50.59:5432/bestprice?sslmode=disable&timezone=UTC+9&connect_timeout=5"
+			log.Println("trying to connect to", dataSourceName)
 			counts++
 		} else {
 			log.Println("connected to postgres")
