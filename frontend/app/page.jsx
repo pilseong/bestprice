@@ -16,34 +16,45 @@ async function HomePage() {
   return (
     <>
       <div className="mb-10 text-center">
+        <div className="flex flex-row justify-center my-2 mb-4">
+          <div>
+            <a href="https://link.coupang.com/a/by1VfJ" target="_blank" referrerPolicy="unsafe-url">
+              <Image src="https://image6.coupangcdn.com/image/affiliate/event/promotion/2024/04/19/c35b93b184a5002e01d2b70f4bad5332.png" width="400" height="400" />
+            </a>
+          </div>
+        </div>
         <div className="flex flex-row justify-center my-2">
           <div>
-            <a href="https://link.coupang.com/a/bxObvY" target="_blank" referrerpolicy="unsafe-url">
-              <Image src="https://image14.coupangcdn.com/image/affiliate/banner/3a8d95746b930663fa4df8fdc9608e1d@2x.jpg" alt="웨스트우드 남성 로고 그래픽 반팔 라운드 티셔츠_WL2MCCT759" width="240" height="240" />
+            <a href="https://link.coupang.com/a/by1XSC" target="_blank" referrerPolicy="unsafe-url">
+              <Image src="https://image8.coupangcdn.com/image/affiliate/banner/151675f781cf5fddce2e98f84e767984@2x.jpg" alt="[안테나푸드] 설악물냉면세트구성상품 10인분면+육수350g x10봉, 02, 칡냉면+육수10봉" width="240" height="240" />
             </a>
           </div>
           <div>
-            <a href="https://link.coupang.com/a/bxOcO4" target="_blank" referrerpolicy="unsafe-url">
-              <Image src="https://image14.coupangcdn.com/image/affiliate/banner/cc30c536e023ae5cbf2e54ced4c0344a@2x.jpg" alt="아이더 Safety 친환경 원단 기능성 티셔츠" width="240" height="240" />
+            <a href="https://link.coupang.com/a/by1YcP" target="_blank" referrerPolicy="unsafe-url">
+              <Image src="https://img5c.coupangcdn.com/image/affiliate/banner/cb8235c9bfb644ada75dac34f8dc1143@2x.jpg" alt="[이겼소] 국내산 냉장 마장동 소고기 옵션 육회300g+간장맛소스40g, 1세트" width="240" height="240" />
             </a>
           </div>
           <div>
-            <a href="https://link.coupang.com/a/bxOfhS" target="_blank" referrerpolicy="unsafe-url">
-              <Image src="https://image13.coupangcdn.com/image/affiliate/banner/044bb9eb32ba0d92d42b9e4808eed892@2x.jpg" alt="맥심 카누 라떼, 13.5g, 50개입, 2개" width="240" height="240" /></a>
-          </div>
-          <div>
-            <a href="https://link.coupang.com/a/bxOgrd" target="_blank" referrerpolicy="unsafe-url">
-              <Image src="https://image8.coupangcdn.com/image/affiliate/banner/c1b8a1c75c59ead28909e47ccc1c17c1@2x.jpg" alt="앙블랑 세이프 인디핑크 아기 물티슈 캡형 63평량, 20매, 12개" width="240" height="240" />
+            <a href="https://link.coupang.com/a/by1YIH" target="_blank" referrerPolicy="unsafe-url">
+              <Image src="https://image7.coupangcdn.com/image/affiliate/banner/9eaff3f5be59436c36b11ed7cd19baf1@2x.jpg" alt="농협안심한우 정육 세절 1등급 국거리용 (냉장), 300g, 1팩" width="240" height="240" />
             </a>
           </div>
           <div>
-            <a href="https://link.coupang.com/a/bxOgUI" target="_blank" referrerpolicy="unsafe-url">
-              <Image src="https://image3.coupangcdn.com/image/affiliate/banner/065e614d0fc31caec6f6e52790450c0f@2x.jpg" alt="지리산 물하나, 2L, 12개" width="240" height="240" />
+            <a href="https://link.coupang.com/a/by1YZQ" target="_blank" referrerPolicy="unsafe-url">
+              <Image src="https://img4c.coupangcdn.com/image/affiliate/banner/ebd25ebf1c8a28aa51b708767f1442c4@2x.jpg" alt="사조참치 살코기 안심따개, 100g, 4개" width="240" height="240" />
             </a>
           </div>
           <div>
-            <a href="https://link.coupang.com/a/bxOho7" target="_blank" referrerpolicy="unsafe-url">
-              <Image src="https://image14.coupangcdn.com/image/affiliate/banner/891aeba62995293211fd9945352c0197@2x.jpg" alt="앱솔루트 명작 2FL 분유 2단계, 800g, 2개" width="240" height="240" /></a>
+            <a href="https://link.coupang.com/a/by1ZrE" target="_blank" referrerPolicy="unsafe-url">
+              <Image src="https://image12.coupangcdn.com/image/affiliate/banner/9acd642961df64cca1819b8157f81221@2x.jpg" alt="오뚜기 뿌셔뿌셔 불고기맛, 90g, 4개" width="240" height="240" />
+            </a>
+          </div>
+          <div>
+            <a href="https://link.coupang.com/a/by1Z8A" target="_blank" referrerPolicy="unsafe-url"><Image src="https://image2.coupangcdn.com/image/affiliate/banner/7e77922d4315539a17442192451a2903@2x.jpg" alt="립톤 아이스티 분말 복숭아맛, 1.5kg, 1개입, 1개" width="240" height="240" /></a>
+          </div>
+          <div>
+            <a href="https://link.coupang.com/a/by1ZKO" target="_blank" referrerPolicy="unsafe-url">
+              <Image src="https://img3c.coupangcdn.com/image/affiliate/banner/a1334a853bd912e024fc9045ba769612@2x.jpg" alt="마샬 엠버튼 엠버튼2 블루투스 스피커 스탠드 받침대 거치대 인테리어, 화이트" width="240" height="240" /></a>
           </div>
         </div>
         <h2 className="text-xs sm:text-base">위의 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</h2>
