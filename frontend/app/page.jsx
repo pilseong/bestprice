@@ -52,10 +52,6 @@ async function HomePage() {
           <div>
             <a href="https://link.coupang.com/a/by1Z8A" target="_blank" referrerPolicy="unsafe-url"><Image src="https://image2.coupangcdn.com/image/affiliate/banner/7e77922d4315539a17442192451a2903@2x.jpg" alt="립톤 아이스티 분말 복숭아맛, 1.5kg, 1개입, 1개" width="240" height="240" /></a>
           </div>
-          <div>
-            <a href="https://link.coupang.com/a/by1ZKO" target="_blank" referrerPolicy="unsafe-url">
-              <Image src="https://img3c.coupangcdn.com/image/affiliate/banner/a1334a853bd912e024fc9045ba769612@2x.jpg" alt="마샬 엠버튼 엠버튼2 블루투스 스피커 스탠드 받침대 거치대 인테리어, 화이트" width="240" height="240" /></a>
-          </div>
         </div>
         <h2 className="text-xs sm:text-base">위의 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</h2>
       </div>
