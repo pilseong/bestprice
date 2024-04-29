@@ -17,6 +17,9 @@ async function HomePage() {
     <>
       <div className="mb-10 text-center">
         <div className="flex flex-row justify-center my-2 mb-4">
+          <iframe src="https://ads-partners.coupang.com/widgets.html?id=775787&template=carousel&trackingCode=AF0672510&subId=&width=1600&height=140&tsource="
+            width="1600" height="140" frameborder="0" scrolling="no" referrerPolicy="unsafe-url" browsingtopics>
+          </iframe>
         </div>
         <div className="flex flex-row justify-center my-2">
           <div>
