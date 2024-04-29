@@ -17,11 +17,6 @@ async function HomePage() {
     <>
       <div className="mb-10 text-center">
         <div className="flex flex-row justify-center my-2 mb-4">
-          <div>
-            <a href="https://link.coupang.com/a/by1VfJ" target="_blank" referrerPolicy="unsafe-url">
-              <Image src="https://image6.coupangcdn.com/image/affiliate/event/promotion/2024/04/19/c35b93b184a5002e01d2b70f4bad5332.png" width="400" height="400" />
-            </a>
-          </div>
         </div>
         <div className="flex flex-row justify-center my-2">
           <div>
