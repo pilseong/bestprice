@@ -7,7 +7,7 @@ import Script from "next/script"
 
 export const metadata = {
   title: {
-    default: 'Best Price',
+    default: '필성 닷넷 대형쇼핑 실시간 베스트셀링 제품만 모아서 보여주는 핫딜 모음',
     description: '가장 많이 팔리는 제품만 모아서 보여주는 핫딜 모음',
     template: '%s | 필성.net'
   }
